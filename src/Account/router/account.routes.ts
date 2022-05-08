@@ -1,27 +1,27 @@
 import { RouteRecordRaw } from "vue-router";
-import { LoginRoutesEnum } from "../enums/LoginRoutesEnums/LoginRoutesEnum";
-import { LoginRoutesNamesEnum } from "../enums/LoginRoutesEnums/LoginRoutesNamesEnum";
+import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";
+import { AccountRoutesNamesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesNamesEnum";
 
 export const accountRoutes: Array<RouteRecordRaw> = [
   {
-    path: LoginRoutesEnum.Login,
-    name: LoginRoutesNamesEnum.Login,
+    path: AccountRoutesEnum.Login,
+    name: AccountRoutesNamesEnum.Login,
     component: () => import("@/Account/views/Login/LoginView.vue"),
     meta: {
       isNavbarVisible: false,
     },
   },
   {
-    path: LoginRoutesEnum.Register,
-    name: LoginRoutesNamesEnum.Register,
+    path: AccountRoutesEnum.Register,
+    name: AccountRoutesNamesEnum.Register,
     component: () => import("@/Account/views/Register/RegisterView.vue"),
     meta: {
       isNavbarVisible: false,
     },
   },
   {
-    path: LoginRoutesEnum.ForgotPassword,
-    name: LoginRoutesNamesEnum.ForgotPassword,
+    path: AccountRoutesEnum.ForgotPassword,
+    name: AccountRoutesNamesEnum.ForgotPassword,
     component: () =>
       import("@/Account/views/ForgotPassword/ForgotPasswordView.vue"),
     meta: {

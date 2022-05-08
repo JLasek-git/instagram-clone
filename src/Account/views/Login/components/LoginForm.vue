@@ -1,7 +1,7 @@
 <template>
   <form class="login-form">
-    <LoginInput />
-    <LoginInput />
+    <LoginInput placeholderText="Nazwa użytkownika lub adres e-mail" />
+    <LoginInput placeholderText="Hasło" />
     <div class="form-btn__container">
       <CustomButton buttonTxt="Zaloguj się" :isActive="isButtonActive" />
     </div>

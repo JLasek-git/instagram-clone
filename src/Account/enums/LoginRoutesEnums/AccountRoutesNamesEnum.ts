@@ -1,4 +1,4 @@
-export const enum LoginRoutesNamesEnum {
+export enum AccountRoutesNamesEnum {
   Login = "Login",
   Register = "Register",
   ForgotPassword = "ForgotPassword",

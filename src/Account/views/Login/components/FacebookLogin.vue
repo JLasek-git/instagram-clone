@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   & .facebook-login-text {
     font-size: $regular-font-size;
     color: $accent-gray-blue;

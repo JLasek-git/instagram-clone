@@ -1,8 +1,23 @@
 <template>
   <div class="custom-input__container">
-    <input class="custom-input" type="text" />
+    <input class="custom-input" type="text" :placeholder="placeholderText" />
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  props: {
+    placeholderText: {
+      type: String,
+    },
+  },
+  setup() {
+    return;
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 .custom-input__container {

@@ -11,7 +11,11 @@
         </div>
         <LoginForm />
         <div class="login-utils__container">
-          <span class="forgot-password">Nie pamiętasz hasła?</span>
+          <span
+            class="forgot-password"
+            @click="$router.push(AccountRoutesEnum.ForgotPassword)"
+            >Nie pamiętasz hasła?</span
+          >
         </div>
       </div>
       <CreateNewAccount />
@@ -24,6 +28,7 @@
 import { defineComponent } from "vue";
 import LoginForm from "@/Account/views/Login/components/LoginForm.vue";
 import CreateNewAccount from "./components/CreateNewAccount.vue";
+import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";
 import DownloadApp from "./components/DownloadApp.vue";
 
 export default defineComponent({
@@ -33,7 +38,9 @@ export default defineComponent({
     DownloadApp,
   },
   setup() {
-    return;
+    return {
+      AccountRoutesEnum,
+    };
   },
 });
 </script>
@@ -68,6 +75,10 @@ export default defineComponent({
         margin: auto;
         font-size: $small-font-size;
         color: $accent-dark-blue;
+
+        & .forgot-password {
+          cursor: pointer;
+        }
       }
     }
   }
