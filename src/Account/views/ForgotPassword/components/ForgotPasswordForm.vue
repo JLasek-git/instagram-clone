@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
-import LoginInput from "@/Global/components/LoginInput.vue";
+import LoginInput from "@/Account/components/LoginInput.vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
 import { ForgotPassword } from "@/Account/models/ForgotPassword";
 import ForgotPasswordDescription from "@/Account/views/ForgotPassword/components/ForgotPasswordDescription.vue";

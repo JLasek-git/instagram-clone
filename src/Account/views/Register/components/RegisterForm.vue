@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
-import LoginInput from "@/Global/components/LoginInput.vue";
+import LoginInput from "@/Account/components/LoginInput.vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
 import { NewUserData } from "@/Account/models/NewUserData";
 

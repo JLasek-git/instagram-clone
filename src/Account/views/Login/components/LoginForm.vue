@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
-import LoginInput from "@/Global/components/LoginInput.vue";
+import LoginInput from "@/Account/components/LoginInput.vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
 import TextSeparator from "@/Global/components/TextSeparator.vue";
 import FacebookLogin from "@/Account/views/Login/components/FacebookLogin.vue";
