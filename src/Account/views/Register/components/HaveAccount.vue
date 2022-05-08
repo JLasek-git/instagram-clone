@@ -1,5 +1,9 @@
 <template>
-  <footer class="page-footer__container">Footer</footer>
+  <div class="login-link__container custom-container-c">
+    <span class="login-text"
+      >Masz konto? <span class="link">Zaloguj się</span></span
+    >
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,11 +17,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.page-footer__container {
+.login-link__container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 80px;
+  height: 70px;
+  margin-top: 10px;
+  font-size: $regular-font-size;
 }
 </style>

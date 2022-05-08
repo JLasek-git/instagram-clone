@@ -8,7 +8,7 @@
       >
         <img
           class="download-app-img app-store-download-btn"
-          src="../../../../Global/assets/appStoreDownload.png"
+          src="../../Global/assets/appStoreDownload.png"
         />
       </a>
       <a
@@ -17,7 +17,7 @@
       >
         <img
           class="download-app-img"
-          src="../../../../Global/assets/GooglePlayDownload.png"
+          src="../../Global/assets/GooglePlayDownload.png"
         />
       </a>
     </div>

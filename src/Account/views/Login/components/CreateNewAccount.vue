@@ -2,9 +2,7 @@
   <div class="create-new-account__container custom-container-c">
     <span class="create-new-account-text"
       >Nie masz konta?
-      <span
-        class="create-new-account-link"
-        @click="$router.push(AccountRoutesEnum.Register)"
+      <span class="link" @click="$router.push(AccountRoutesEnum.Register)"
         >Zarejestruj się</span
       ></span
     >
@@ -33,11 +31,5 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   font-size: $regular-font-size;
-
-  & .create-new-account-link {
-    color: $accent-light-blue;
-    font-weight: bold;
-    cursor: pointer;
-  }
 }
 </style>

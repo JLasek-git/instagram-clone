@@ -25,11 +25,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import LoginForm from "@/Account/views/Login/components/LoginForm.vue";
 import CreateNewAccount from "./components/CreateNewAccount.vue";
 import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";
-import DownloadApp from "./components/DownloadApp.vue";
+import DownloadApp from "../../components/DownloadApp.vue";
+import "../../../Global/assets/photo1.png";
 
 export default defineComponent({
   components: {

@@ -19,6 +19,10 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    buttonIcon: {
+      type: String,
+      default: () => null,
+    },
   },
   setup() {
     return;
@@ -35,5 +39,14 @@ export default defineComponent({
   background-color: $accent-light-blue;
   color: $primary-color;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .icon {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+  }
 }
 </style>
