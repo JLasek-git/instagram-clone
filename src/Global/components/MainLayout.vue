@@ -1,6 +1,6 @@
 <template>
   <main class="main-layout__container">
-    <NavigationBar />
+    <NavigationBar v-if="$route.meta.isNavbarVisible" />
     <section class="content__container">
       <div class="main-content__wrapper">
         <slot />
@@ -12,7 +12,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import NavigationBar from "./NavigationBar.vue";
-
 export default defineComponent({
   components: { NavigationBar },
   setup() {
@@ -28,7 +27,6 @@ export default defineComponent({
 
   & .main-content__wrapper {
     width: $desktop-container-width;
-    background: blue;
   }
 }
 </style>
