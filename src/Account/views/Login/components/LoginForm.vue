@@ -1,7 +1,10 @@
 <template>
   <form class="login-form">
-    <LoginInput placeholderText="Nazwa użytkownika lub adres e-mail" />
-    <LoginInput placeholderText="Hasło" />
+    <LoginInput
+      placeholderText="Nazwa użytkownika lub adres e-mail"
+      v-model="userLoginData.login"
+    />
+    <LoginInput placeholderText="Hasło" v-model="userLoginData.password" />
     <div class="form-btn__container">
       <CustomButton buttonTxt="Zaloguj się" :isActive="isButtonActive" />
     </div>
@@ -11,11 +14,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watch } from "vue";
 import LoginInput from "@/Global/components/LoginInput.vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
 import TextSeparator from "@/Global/components/TextSeparator.vue";
 import FacebookLogin from "@/Account/views/Login/components/FacebookLogin.vue";
+import { UserLogin } from "@/Account/models/UserLogin";
 
 export default defineComponent({
   components: {
@@ -26,8 +30,21 @@ export default defineComponent({
   },
   setup() {
     const isButtonActive = ref(false);
+    const userLoginData = ref(new UserLogin());
+
+    watch(userLoginData.value, () => {
+      if (
+        userLoginData.value.login === "" ||
+        userLoginData.value.password === ""
+      ) {
+        isButtonActive.value = false;
+      } else {
+        isButtonActive.value = true;
+      }
+    });
 
     return {
+      userLoginData,
       isButtonActive,
     };
   },

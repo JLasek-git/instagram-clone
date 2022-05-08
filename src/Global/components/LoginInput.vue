@@ -1,20 +1,40 @@
 <template>
   <div class="custom-input__container">
-    <input class="custom-input" type="text" :placeholder="placeholderText" />
+    <input
+      class="custom-input"
+      type="text"
+      :placeholder="placeholderText"
+      v-model="userInputValue"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 
 export default defineComponent({
+  emits: ["update:modelValue"],
   props: {
+    modelValue: {
+      type: String,
+    },
     placeholderText: {
       type: String,
     },
   },
-  setup() {
-    return;
+  setup(props, { emit }) {
+    const userInputValue = computed({
+      get: () => {
+        return props.modelValue;
+      },
+      set: (value) => {
+        emit("update:modelValue", value);
+      },
+    });
+
+    return {
+      userInputValue,
+    };
   },
 });
 </script>
