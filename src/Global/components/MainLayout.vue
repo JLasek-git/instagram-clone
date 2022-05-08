@@ -6,14 +6,16 @@
         <slot />
       </div>
     </section>
+    <PageFooter />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import NavigationBar from "./NavigationBar.vue";
+import PageFooter from "./PageFooter.vue";
 export default defineComponent({
-  components: { NavigationBar },
+  components: { NavigationBar, PageFooter },
   setup() {
     return;
   },
@@ -21,12 +23,22 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.content__container {
+.main-layout__container {
+  height: 100%;
   display: flex;
-  justify-content: center;
-
-  & .main-content__wrapper {
-    width: $desktop-container-width;
+  flex-direction: column;
+  background-color: $base-color;
+  .content__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    & .main-content__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $desktop-container-width;
+    }
   }
 }
 </style>

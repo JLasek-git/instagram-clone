@@ -26,7 +26,7 @@ export default defineComponent({
   align-items: center;
   width: 270px;
   height: 35px;
-  border-radius: 8px;
+  border-radius: $medium-border-radius;
   background-color: $accents-color;
 
   & .search-bar-icon {
@@ -41,7 +41,7 @@ export default defineComponent({
 
   .search-bar {
     width: 210px;
-    border-radius: 8px;
+    border-radius: $medium-border-radius;
     background-color: transparent;
     border: none;
     &:focus {

@@ -1,5 +1,7 @@
 //Borders
 $base-border: 1px solid #dbdbdb;
+$small-border-radius: 4px;
+$medium-border-radius: 8px;
 
 //Colors
 $base-color: #fafafa;
@@ -7,6 +9,14 @@ $primary-color: #ffffff;
 $primary-text-color: #262626;
 $light-text-color: #8e8e8e;
 $accents-color: #efefef;
+$accent-light-blue: #0095f6;
+$accent-dark-blue: #00376b;
+$accent-gray-blue: #385185;
 
 //Desktop sizes
 $desktop-container-width: 935px;
+
+//Fonts
+$regular-font-size: 14px;
+$medium-font-size: 13px;
+$small-font-size: 12px;
