@@ -4,10 +4,12 @@
       <div class="logo__container">
         <img src="../assets/instagram-logo.png" />
       </div>
-      <div class="search-bar__container">
+      <div v-if="!$route.meta.noUtils" class="search-bar__container">
         <SearchBar />
       </div>
-      <div class="icons-nav__container">dsaddsadsa</div>
+      <div v-if="!$route.meta.noUtils" class="icons-nav__container">
+        dsaddsadsa
+      </div>
     </div>
   </nav>
 </template>

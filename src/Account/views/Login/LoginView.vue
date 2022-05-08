@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import LoginForm from "@/Account/views/Login/components/LoginForm.vue";
 import CreateNewAccount from "./components/CreateNewAccount.vue";
 import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";

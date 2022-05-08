@@ -1,17 +1,23 @@
 <template>
   <div class="login-link__container custom-container-c">
     <span class="login-text"
-      >Masz konto? <span class="link">Zaloguj się</span></span
+      >Masz konto?
+      <span class="link" @click="$router.push(AccountRoutesEnum.Login)"
+        >Zaloguj się</span
+      ></span
     >
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";
 
 export default defineComponent({
   setup() {
-    return;
+    return {
+      AccountRoutesEnum,
+    };
   },
 });
 </script>
