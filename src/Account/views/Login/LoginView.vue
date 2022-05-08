@@ -49,6 +49,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .login-view__container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 600px;
   & .left-side-img__container {
@@ -82,6 +84,12 @@ export default defineComponent({
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 865px) {
+  .left-side-img__container {
+    display: none;
   }
 }
 </style>
