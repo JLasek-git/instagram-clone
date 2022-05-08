@@ -27,7 +27,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  min-height: 70px;
   margin-top: 10px;
   font-size: $regular-font-size;
 }

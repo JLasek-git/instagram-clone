@@ -56,6 +56,7 @@ export default defineComponent({
   & .register-content__container {
     width: 100%;
     height: 620px;
+    margin-top: 40px;
 
     & .register-content {
       width: 270px;
