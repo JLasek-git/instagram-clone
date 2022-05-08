@@ -1,13 +1,19 @@
 <template>
-  <router-view />
+  <MainLayout>
+    <router-view />
+  </MainLayout>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
+<script lang="ts">
+import { defineComponent } from "vue";
+import MainLayout from "./Global/components/MainLayout.vue";
+
+export default defineComponent({
+  components: { MainLayout },
+  setup() {
+    return;
+  },
+});
+</script>
+
+<style lang="scss"></style>
