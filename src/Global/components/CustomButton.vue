@@ -1,7 +1,11 @@
 <template>
   <button
     class="custom-button"
-    :style="isActive ? '' : 'background-color: rgba(0,149,246,.3) !important;'"
+    :style="
+      isActive
+        ? 'cursor: pointer;'
+        : 'background-color: rgba(0,149,246,.3) !important; '
+    "
   >
     {{ buttonTxt }}
   </button>
@@ -18,10 +22,6 @@ export default defineComponent({
     isActive: {
       type: Boolean,
       default: true,
-    },
-    buttonIcon: {
-      type: String,
-      default: () => null,
     },
   },
   setup() {

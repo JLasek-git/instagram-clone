@@ -2,7 +2,7 @@
   <div class="forgot-password__container custom-container-c">
     <ForgotPasswordHeader />
     <div class="forgot-password-content__container">
-      <form class="forgot-password-form"></form>
+      <ForgotPasswordForm />
       <TextSeparator separatorText="LUB" />
       <span
         class="forgot-password-link"
@@ -10,6 +10,7 @@
         >Utwórz nowe konto</span
       >
     </div>
+    <BackToLogin />
   </div>
 </template>
 
@@ -18,9 +19,16 @@ import { defineComponent } from "vue";
 import TextSeparator from "@/Global/components/TextSeparator.vue";
 import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";
 import ForgotPasswordHeader from "@/Account/views/ForgotPassword/components/ForgotPasswordHeader.vue";
+import BackToLogin from "@/Account/views/ForgotPassword/components/BackToLogin.vue";
+import ForgotPasswordForm from "@/Account/views/ForgotPassword/components/ForgotPasswordForm.vue";
 
 export default defineComponent({
-  components: { TextSeparator, ForgotPasswordHeader },
+  components: {
+    TextSeparator,
+    ForgotPasswordHeader,
+    BackToLogin,
+    ForgotPasswordForm,
+  },
   setup() {
     return {
       AccountRoutesEnum,
@@ -44,10 +52,6 @@ export default defineComponent({
   & .forgot-password-content__container {
     height: 100%;
     width: 300px;
-
-    .forgot-password-form {
-      height: 60%;
-    }
   }
 }
 </style>

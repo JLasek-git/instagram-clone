@@ -8,6 +8,19 @@
   </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import { AccountRoutesEnum } from "@/Account/enums/LoginRoutesEnums/AccountRoutesEnum";
+
+export default defineComponent({
+  setup() {
+    return {
+      AccountRoutesEnum,
+    };
+  },
+});
+</script>
+
 <style lang="scss" scoped>
 .back-to-login-link__container {
   display: flex;
@@ -17,5 +30,11 @@
   height: 40px;
   background-color: $base-color;
   border: $base-border;
+
+  & .forgot-password-link {
+    font-size: $regular-font-size;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 </style>
