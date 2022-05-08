@@ -1,5 +1,8 @@
 <template>
-  <form class="register-form">
+  <form
+    class="register-form"
+    @submit.prevent="$router.push(AppRoutesEnum.HomePage)"
+  >
     <LoginInput
       placeholderText="Adres e-mail"
       v-model="newUserLoginData.email"
@@ -32,6 +35,7 @@ import { defineComponent, ref, watch } from "vue";
 import LoginInput from "@/Account/components/LoginInput.vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
 import { NewUserData } from "@/Account/models/NewUserData";
+import { AppRoutesEnum } from "@/App/enums/AppRoutes/appRoutesEnum";
 
 export default defineComponent({
   components: { LoginInput, CustomButton },
@@ -55,6 +59,7 @@ export default defineComponent({
     return {
       isButtonActive,
       newUserLoginData,
+      AppRoutesEnum,
     };
   },
 });

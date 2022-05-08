@@ -1,5 +1,8 @@
 <template>
-  <form class="login-form">
+  <form
+    class="login-form"
+    @submit.prevent="$router.push(AppRoutesEnum.HomePage)"
+  >
     <LoginInput
       placeholderText="Nazwa użytkownika lub adres e-mail"
       v-model="userLoginData.login"
@@ -19,6 +22,7 @@ import LoginInput from "@/Account/components/LoginInput.vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
 import TextSeparator from "@/Global/components/TextSeparator.vue";
 import FacebookLogin from "@/Account/views/Login/components/FacebookLogin.vue";
+import { AppRoutesEnum } from "@/App/enums/AppRoutes/appRoutesEnum";
 import { UserLogin } from "@/Account/models/UserLogin";
 
 export default defineComponent({
@@ -46,6 +50,7 @@ export default defineComponent({
     return {
       userLoginData,
       isButtonActive,
+      AppRoutesEnum,
     };
   },
 });

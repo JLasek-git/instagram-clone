@@ -1,6 +1,8 @@
 <template>
   <button
+    @click="emit('buttonClicked')"
     class="custom-button"
+    :disabled="!isActive"
     :style="
       isActive
         ? 'cursor: pointer;'
@@ -15,6 +17,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  emits: ["buttonClicked"],
   props: {
     buttonTxt: {
       type: String,
