@@ -1,0 +1,10 @@
+.plain-btn {
+  color: $accent-light-blue;
+  font-weight: bold;
+  cursor: pointer;
+
+  &-gray {
+    @extend .plain-btn;
+    color: $primary-text-color;
+  }
+}
