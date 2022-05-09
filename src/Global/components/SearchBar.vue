@@ -1,26 +1,62 @@
 <template>
   <div class="search-bar__container">
     <img
+      v-if="isSearchIconVisible"
       class="magnify-glass search-bar-icon"
       src="../assets/magnifyGlass.svg"
     />
-    <input class="search-bar" type="text" placeholder="Szukaj" />
-    <img class="close-icon search-bar-icon" src="../assets/closeIcon.svg" />
+    <input
+      v-model="searchBarText"
+      class="search-bar"
+      type="text"
+      placeholder="Szukaj"
+      @focus="changeIconsVisibility()"
+      @blur="changeIconsVisibility()"
+    />
+    <img
+      v-if="!isSearchIconVisible"
+      @click="searchBarText = ''"
+      class="close-icon search-bar-icon"
+      src="../assets/closeIcon.svg"
+    />
+    <DialogWithArrow />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import DialogWithArrow from "@/Global/components/DialogWithArrow.vue";
 
 export default defineComponent({
+  components: {
+    DialogWithArrow,
+  },
   setup() {
-    return;
+    const searchBarText = ref("");
+    const isCloseIconVisible = ref(false);
+    const isSearchIconVisible = ref(true);
+    const isRecentSearchesVisible = ref(false);
+
+    function changeIconsVisibility(): void {
+      isCloseIconVisible.value = !isCloseIconVisible.value;
+      isSearchIconVisible.value = !isSearchIconVisible.value;
+      isRecentSearchesVisible.value = !isRecentSearchesVisible.value;
+    }
+
+    return {
+      searchBarText,
+      isCloseIconVisible,
+      isSearchIconVisible,
+      isRecentSearchesVisible,
+      changeIconsVisibility,
+    };
   },
 });
 </script>
 
 <style lang="scss" scoped>
 .search-bar__container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +75,7 @@ export default defineComponent({
     cursor: pointer;
   }
 
-  .search-bar {
+  & .search-bar {
     width: 210px;
     border-radius: $medium-border-radius;
     background-color: transparent;

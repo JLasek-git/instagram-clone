@@ -2,7 +2,11 @@
   <nav class="navigation-drawer__container">
     <div class="navigation-items__container">
       <div class="logo__container">
-        <img src="../assets/instagram-logo.png" />
+        <img
+          class="logo-img"
+          src="../assets/instagram-logo.png"
+          @click="$router.push(AppRoutesEnum.HomePage)"
+        />
       </div>
       <div v-if="!$route.meta.noUtils" class="search-bar__container">
         <SearchBar />
@@ -17,13 +21,16 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SearchBar from "@/Global/components/SearchBar.vue";
+import { AppRoutesEnum } from "@/App/enums/AppRoutes/appRoutesEnum";
 
 export default defineComponent({
   components: {
     SearchBar,
   },
   setup() {
-    return;
+    return {
+      AppRoutesEnum,
+    };
   },
 });
 </script>
@@ -46,6 +53,10 @@ export default defineComponent({
       display: flex;
       justify-content: flex-start;
       flex: 1 0 130px;
+
+      & .logo-img {
+        cursor: pointer;
+      }
     }
 
     & .search-bar__container {

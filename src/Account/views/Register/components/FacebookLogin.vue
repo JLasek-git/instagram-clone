@@ -4,6 +4,7 @@
     <p class="description-paragraph">zdjęcia i filmy znajomych.</p>
     <div class="fb-login-btn__container">
       <CustomButton
+        @buttonClicked="$router.push(AppRoutesEnum.HomePage)"
         buttonTxt="Zaloguj się przez Facebooka"
         buttonIcon="../../../../Global/assets/facebookIconWhite.svg"
       />
@@ -14,13 +15,16 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import CustomButton from "@/Global/components/CustomButton.vue";
+import { AppRoutesEnum } from "@/App/enums/AppRoutes/appRoutesEnum";
 
 export default defineComponent({
   components: {
     CustomButton,
   },
   setup() {
-    return;
+    return {
+      AppRoutesEnum,
+    };
   },
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
   <button
-    @click="emit('buttonClicked')"
+    @click="$emit('buttonClicked')"
     class="custom-button"
     :disabled="!isActive"
     :style="
