@@ -6,16 +6,14 @@
         <slot />
       </div>
     </section>
-    <PageFooter />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import NavigationBar from "./NavigationBar.vue";
-import PageFooter from "./PageFooter.vue";
 export default defineComponent({
-  components: { NavigationBar, PageFooter },
+  components: { NavigationBar },
   setup() {
     return;
   },
@@ -24,11 +22,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .main-layout__container {
-  height: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   background-color: $base-color;
   .content__container {
+    margin-top: 85px;
     display: flex;
     justify-content: center;
     width: 100%;

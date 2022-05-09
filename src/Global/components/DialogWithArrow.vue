@@ -76,6 +76,8 @@ export default defineComponent({
   }
 }
 
+//Slide animations
+
 .slide-fade-enter-active {
   transition: all 0.1s;
 }

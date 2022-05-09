@@ -11,4 +11,20 @@ export const appRoutes: Array<RouteRecordRaw> = [
       isNavbarVisible: true,
     },
   },
+  {
+    path: AppRoutesEnum.Explore,
+    name: AppRoutesNamesEnum.Explore,
+    component: () => import("@/App/views/Explore/ExplorePage.vue"),
+    meta: {
+      isNavbarVisible: true,
+    },
+  },
+  {
+    path: AppRoutesEnum.Inbox,
+    name: AppRoutesNamesEnum.Inbox,
+    component: () => import("@/App/views/Inbox/InboxPage.vue"),
+    meta: {
+      isNavbarVisible: true,
+    },
+  },
 ];

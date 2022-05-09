@@ -37,11 +37,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .navigation-drawer__container {
+  position: fixed;
+  left: 0;
+  right: 0;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: $base-border;
+  background-color: $primary-color;
 
   .navigation-items__container {
     width: $desktop-container-width;
