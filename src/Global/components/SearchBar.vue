@@ -7,19 +7,19 @@
     />
     <input
       v-model="searchBarText"
+      ref="searchBar"
       class="search-bar"
       type="text"
       placeholder="Szukaj"
       @focus="changeIconsVisibility()"
-      @blur="changeIconsVisibility()"
     />
     <img
       v-if="!isSearchIconVisible"
-      @click="searchBarText = ''"
+      @click="clearUserInput()"
       class="close-icon search-bar-icon"
       src="../assets/closeIcon.svg"
     />
-    <DialogWithArrow />
+    <DialogWithArrow v-model="isRecentSearchesVisible" />
   </div>
 </template>
 
@@ -43,12 +43,19 @@ export default defineComponent({
       isRecentSearchesVisible.value = !isRecentSearchesVisible.value;
     }
 
+    function clearUserInput(): void {
+      searchBarText.value = "";
+      changeIconsVisibility();
+      console.log("czyszczę");
+    }
+
     return {
       searchBarText,
       isCloseIconVisible,
       isSearchIconVisible,
       isRecentSearchesVisible,
       changeIconsVisibility,
+      clearUserInput,
     };
   },
 });
