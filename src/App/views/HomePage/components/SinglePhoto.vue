@@ -47,6 +47,7 @@ export default defineComponent({
   width: calc(615px - 20px);
   border-radius: $small-border-radius;
   padding: 0 10px;
+  margin-top: 25px;
 
   & .photo-header {
     display: flex;

@@ -22,16 +22,18 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .main-layout__container {
+  width: 100%;
+  height: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  background-color: $base-color;
   .content__container {
     margin-top: 85px;
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
+    z-index: 1;
     & .main-content__wrapper {
       display: flex;
       justify-content: center;

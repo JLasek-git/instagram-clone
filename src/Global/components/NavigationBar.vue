@@ -46,6 +46,7 @@ export default defineComponent({
   align-items: center;
   border-bottom: $base-border;
   background-color: $primary-color;
+  z-index: 9999;
 
   .navigation-items__container {
     width: $desktop-container-width;

@@ -2,7 +2,7 @@
   <div class="homepage__container">
     <div class="left-side__container">
       <FollowedShorts />
-      <SinglePhoto />
+      <SinglePhoto v-for="n in 10" :key="n" />
     </div>
     <div class="right-side__container"></div>
   </div>
@@ -27,6 +27,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .homepage__container {
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  margin-bottom: 24px;
 }
 </style>

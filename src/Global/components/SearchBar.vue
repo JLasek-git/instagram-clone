@@ -71,7 +71,7 @@ export default defineComponent({
   height: 35px;
   border-radius: $medium-border-radius;
   background-color: $accents-color;
-
+  z-index: 10 !important;
   & .search-bar-icon {
     padding: 0 10px;
   }

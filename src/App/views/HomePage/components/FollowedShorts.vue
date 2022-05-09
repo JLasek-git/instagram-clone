@@ -1,58 +1,34 @@
 <template>
   <div class="custom-container-c shorts__container">
     <ul class="user-shorts-list">
-      <li class="user-short new-short">
-        <div class="photo__wrapper">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
-      <li class="user-short">
-        <div class="photo__wrapper">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
-      <li class="user-short">
-        <div class="photo__wrapper">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
-      <li class="user-short">
-        <div class="photo__wrapper">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
-      <li class="user-short">
-        <div class="photo__wrapper">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
-      <li class="user-short">
-        <div class="photo__wrapper">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
-      <li class="user-short">
-        <div class="photo__wrapper active">
-          <img src="../../../assets/userPhoto.jpg" />
-        </div>
-        <div class="user-name">Username</div>
-      </li>
+      <UserShort
+        v-for="userShort in userShortsArray"
+        :key="userShort.username"
+        :userAvatarName="userShort.photoName"
+        :username="userShort.username"
+      />
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import { getUserShorts } from "@/App/services/homepage.service";
+import { UserShortModel } from "@/App/models/UserShortModel";
+import UserShort from "@/App/views/HomePage/components/UserShort.vue";
 
 export default defineComponent({
+  components: {
+    UserShort,
+  },
   setup() {
-    return;
+    const userShortsArray = ref<UserShortModel[]>([]);
+    getUserShorts().then((response) => {
+      userShortsArray.value = response;
+    });
+    return {
+      userShortsArray,
+    };
   },
 });
 </script>
@@ -66,10 +42,8 @@ export default defineComponent({
   align-content: center;
   width: calc(615px - 40px);
   height: fit-content;
-  margin-bottom: 24px;
   padding: 15px 20px;
   border-radius: $small-border-radius;
-
   & .user-shorts-list {
     display: flex;
     justify-content: space-between;
@@ -79,44 +53,6 @@ export default defineComponent({
     width: 100%;
     height: 100%;
     list-style: none;
-
-    & .user-short {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      width: 56px;
-      height: 84px;
-
-      & .user-name {
-        font-size: $small-font-size;
-      }
-
-      & .photo__wrapper {
-        position: relative;
-        width: 100%;
-        height: 56px;
-        & img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 50%;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          border: $base-border;
-          background: transparent;
-          left: -3px;
-          top: -3px;
-          right: 0;
-          bottom: 0;
-        }
-      }
-    }
   }
 }
 </style>
