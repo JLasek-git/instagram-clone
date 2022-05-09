@@ -77,11 +77,11 @@ export default defineComponent({
 }
 
 .slide-fade-enter-active {
-  transition: all 0.1s ease-out;
+  transition: all 0.1s;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.1s;
 }
 
 .slide-fade-enter-from,
