@@ -62,8 +62,15 @@ export default defineComponent({
   .homepage__container {
     display: flex;
     justify-content: center;
+    width: 100%;
     .right-side__container {
       display: none;
+    }
+
+    & .left-side__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
