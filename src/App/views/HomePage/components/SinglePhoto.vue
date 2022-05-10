@@ -14,9 +14,9 @@
     </div>
     <div class="comments-section">
       <div class="comments-section-icons">
-        <div class="reaction-icons">
+        <div class="reaction-icons icons__container">
           <img
-            class="photo-icon"
+            class="photo-reaction-icon"
             :src="
               likedPhotos.includes(homepagePhotoData.id)
                 ? require('@/Global/assets/heart.svg')
@@ -24,14 +24,20 @@
             "
             @click="handleHeartIconClick(homepagePhotoData.id)"
           />
-          <img class="photo-icon" src="../../../../Global/assets/chat.svg" />
           <img
-            class="photo-icon"
+            class="photo-reaction-icon"
+            src="../../../../Global/assets/chat.svg"
+          />
+          <img
+            class="photo-reaction-icon"
             src="../../../../Global/assets/paperplaneoutilned.svg"
           />
         </div>
-        <div class="save-icon">
-          <img class="photo-icon" src="../../../../Global/assets/compass.svg" />
+        <div class="save-icon__container icons__container">
+          <img
+            class="photo-reaction-icon"
+            src="../../../../Global/assets/compass.svg"
+          />
         </div>
       </div>
     </div>
@@ -139,19 +145,14 @@ export default defineComponent({
       width: 100%;
       height: 55px;
 
-      & .reaction-icons,
-      & .save-icon {
+      & .icons__container,
+      & .save-icon__container {
         padding-right: 10px;
-        & .photo-icon {
-          width: 26px;
-          height: 26px;
-        }
       }
-
-      & .reaction-icons {
-        & .photo-icon {
-          padding: 8px;
-        }
+      & .photo-reaction-icon {
+        width: 26px;
+        height: 26px;
+        padding: 8px;
       }
       & img {
         cursor: pointer;
