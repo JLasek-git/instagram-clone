@@ -21,11 +21,13 @@
     </div>
     <div class="statue-info__container">
       Rejestrując się, akceptujesz
-      <span class="important">Regulamin.</span> Informacje o tym, jak zbieramy,
-      wykorzystujemy i udostępniamy Twoje dane, zawierają nasze
-      <span class="important">Zasady dotyczące danych.</span> O wykorzystaniu
-      plików cookie i podobnych technologii informują
-      <span class="important"> Zasady dotyczące plików cookie. </span>
+      <span class="plain-btn-light-gray">Regulamin.</span> Informacje o tym, jak
+      zbieramy, wykorzystujemy i udostępniamy Twoje dane, zawierają nasze
+      <span class="plain-btn-light-gray">Zasady dotyczące danych.</span> O
+      wykorzystaniu plików cookie i podobnych technologii informują
+      <span class="plain-btn-light-gray">
+        Zasady dotyczące plików cookie.
+      </span>
     </div>
   </form>
 </template>
@@ -70,17 +72,13 @@ export default defineComponent({
   width: 100%;
 
   & .register-form-btn__container {
-    margin-top: 12px;
+    margin-top: $small-margin;
   }
 
   & .statue-info__container {
     color: $light-text-color;
-    margin-top: 24px;
+    margin-top: 25px;
     font-size: $small-font-size;
-
-    & .important {
-      font-weight: bold;
-    }
   }
 }
 </style>

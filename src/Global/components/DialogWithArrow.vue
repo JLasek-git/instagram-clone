@@ -55,7 +55,7 @@ export default defineComponent({
       position: absolute;
       width: 100%;
       height: 100%;
-      background: white;
+      background: $primary-color;
       z-index: 2;
     }
 

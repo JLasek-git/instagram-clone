@@ -2,7 +2,12 @@
   <div class="propositions__container">
     <div class="fixed-propositions__wrapper">
       <div class="current-user__container profile-item__container">
-        <ProfileItem :userData="currentUserData" plainBtnText="Przełącz" />
+        <ProfileItem
+          :userData="currentUserData"
+          plainBtnText="Przełącz"
+          biggerAvatar
+          isRealNameVisible
+        />
       </div>
       <div class="suggestions__container">
         <div class="suggestions-utils__container">
@@ -45,7 +50,7 @@ export default defineComponent({
   .fixed-propositions__wrapper {
     position: fixed;
     width: 295px;
-    height: 350px;
+    height: $desktop-medium-container-width;
 
     & .suggestions__container {
       display: flex;
@@ -53,7 +58,7 @@ export default defineComponent({
       justify-content: center;
       align-items: center;
       font-size: $small-font-size;
-      margin-top: 24px;
+      margin-top: $default-margin;
 
       & .suggestions-utils__container {
         display: flex;

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation-drawer__container">
+  <div class="app-bar__container">
     <div class="navigation-items__container">
       <div class="logo__container">
         <img
@@ -11,11 +11,18 @@
       <div v-if="!$route.meta.noUtils" class="search-bar__container">
         <SearchBar />
       </div>
-      <div v-if="!$route.meta.noUtils" class="icons-nav__container">
-        dsaddsadsa
-      </div>
+      <nav v-if="!$route.meta.noUtils" class="navigation__container">
+        <div class="icons__container">
+          <img src="../assets/home.svg" />
+          <img src="../assets/paperplaneoutilned.svg" />
+          <img src="../assets/circleplus.svg" />
+          <img src="../assets/compass.svg" />
+          <img src="../assets/heart-outline.svg" />
+          <div class="profile-icon"></div>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script lang="ts">
@@ -36,7 +43,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.navigation-drawer__container {
+.app-bar__container {
   position: fixed;
   left: 0;
   right: 0;
@@ -49,7 +56,7 @@ export default defineComponent({
   z-index: 9999;
 
   .navigation-items__container {
-    width: $desktop-container-width;
+    width: $desktop-parent-container-width;
     display: flex;
     align-items: center;
     height: 100%;
@@ -69,10 +76,31 @@ export default defineComponent({
       flex: 0 1 auto;
     }
 
-    & .icons-nav__container {
+    & .navigation__container {
       display: flex;
       justify-content: flex-end;
       flex: 1 0 130px;
+
+      .icons__container {
+        width: 280px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        & img {
+          width: 28px;
+          height: 28px;
+          cursor: pointer;
+        }
+
+        & .profile-icon {
+          width: 24px;
+          height: 24px;
+          background: gray;
+          border-radius: 50%;
+        }
+      }
     }
   }
 }

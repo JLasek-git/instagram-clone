@@ -63,7 +63,7 @@ export default defineComponent({
   & .right-side-form__container {
     display: flex;
     flex-direction: column;
-    width: 350px;
+    width: $desktop-medium-container-width;
     height: 100%;
 
     & .right-side-content__container {

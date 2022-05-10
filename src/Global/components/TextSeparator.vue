@@ -25,7 +25,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 24px 0;
+  margin: $default-margin 0;
   & .separator-line {
     width: 100%;
     height: 1px;
@@ -35,7 +35,7 @@ export default defineComponent({
     color: $light-text-color;
     font-weight: bold;
     font-size: $medium-font-size;
-    margin: 0 24px;
+    margin: 0 $default-margin;
   }
 }
 </style>

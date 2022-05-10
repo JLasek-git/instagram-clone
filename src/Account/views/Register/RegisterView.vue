@@ -42,7 +42,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 350px;
+  width: $desktop-medium-container-width;
   height: 100%;
 
   & .image-logo__container {
@@ -59,7 +59,7 @@ export default defineComponent({
     margin-top: 40px;
 
     & .register-content {
-      width: 270px;
+      width: $desktop-small-container-width;
       flex-direction: column;
       display: flex;
       justify-content: center;

@@ -1,6 +1,6 @@
 <template>
   <main class="main-layout__container">
-    <NavigationBar v-if="$route.meta.isNavbarVisible" />
+    <AppBar v-if="$route.meta.isNavbarVisible" />
     <section class="content__container">
       <div class="main-content__wrapper">
         <slot />
@@ -11,9 +11,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import NavigationBar from "./NavigationBar.vue";
+import AppBar from "./AppBar.vue";
 export default defineComponent({
-  components: { NavigationBar },
+  components: { AppBar },
   setup() {
     return;
   },
@@ -38,7 +38,7 @@ export default defineComponent({
       display: flex;
       justify-content: center;
       align-items: center;
-      width: $desktop-container-width;
+      width: $desktop-parent-container-width;
     }
   }
 }

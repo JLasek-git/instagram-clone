@@ -7,4 +7,14 @@
     @extend .plain-btn;
     color: $primary-text-color;
   }
+
+  &-bigger {
+    @extend .plain-btn;
+    font-size: $regular-font-size;
+  }
+
+  &-light-gray {
+    @extend .plain-btn;
+    color: $light-text-color;
+  }
 }

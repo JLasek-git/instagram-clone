@@ -27,7 +27,7 @@ export default defineComponent({
 
   & .forgot-password-icon {
     height: 96px;
-    margin: 24px 0;
+    margin: $default-margin 0;
   }
 
   & .forgot-password-description-header {

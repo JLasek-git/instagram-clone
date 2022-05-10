@@ -62,11 +62,11 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 270px;
+  width: $desktop-small-container-width;
 
   & .form-btn__container {
     width: 100%;
-    margin-top: 12px;
+    margin-top: $small-margin;
   }
 }
 </style>

@@ -2,7 +2,9 @@
   <div class="create-new-account__container custom-container-c">
     <span class="create-new-account-text"
       >Nie masz konta?
-      <span class="link" @click="$router.push(AccountRoutesEnum.Register)"
+      <span
+        class="plain-btn-bigger"
+        @click="$router.push(AccountRoutesEnum.Register)"
         >Zarejestruj się</span
       ></span
     >

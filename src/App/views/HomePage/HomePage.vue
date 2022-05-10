@@ -31,9 +31,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .homepage__container {
   position: relative;
-  width: 935px;
+  width: $desktop-parent-container-width;
   height: fit-content;
-  margin-bottom: 24px;
+  margin-bottom: $default-margin;
 
   & .right-side__container {
     position: absolute;

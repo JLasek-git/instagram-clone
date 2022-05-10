@@ -2,7 +2,9 @@
   <div class="login-link__container custom-container-c">
     <span class="login-text"
       >Masz konto?
-      <span class="link" @click="$router.push(AccountRoutesEnum.Login)"
+      <span
+        class="plain-btn-bigger"
+        @click="$router.push(AccountRoutesEnum.Login)"
         >Zaloguj się</span
       ></span
     >

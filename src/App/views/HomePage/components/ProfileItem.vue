@@ -3,14 +3,12 @@
     <div
       class="user-avatar"
       :style="
-        isSwitchProfile
-          ? ''
-          : 'width: 32px !important; height: 32px !important;'
+        biggerAvatar ? '' : 'width: 32px !important; height: 32px !important;'
       "
     ></div>
     <div class="user-info">
       <div class="plain-btn-gray">{{ userData.username }}</div>
-      <span v-if="isSwitchProfile" class="user-real-name">{{
+      <span v-if="isRealNameVisible" class="user-real-name">{{
         userData.realName
       }}</span>
     </div>
@@ -32,7 +30,11 @@ export default defineComponent({
       type: String,
       default: () => "Obserwuj",
     },
-    isSwitchProfile: {
+    biggerAvatar: {
+      type: Boolean,
+      default: false,
+    },
+    isRealNameVisible: {
       type: Boolean,
       default: false,
     },
@@ -58,7 +60,7 @@ export default defineComponent({
     background: lightcyan;
     border: $base-border;
     border-radius: 50%;
-    margin-right: 12px;
+    margin-right: $small-margin;
     flex: 0 0 auto;
   }
 

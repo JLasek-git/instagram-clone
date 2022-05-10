@@ -14,10 +14,16 @@ $accent-dark-blue: #00376b;
 $accent-gray-blue: #385185;
 
 //Desktop sizes
-$desktop-container-width: 935px;
+$desktop-parent-container-width: 935px;
+$desktop-small-container-width: 270px;
+$desktop-medium-container-width: 350px;
 
 //Fonts
 $bigger-font-size: 17px;
 $regular-font-size: 14px;
 $medium-font-size: 13px;
 $small-font-size: 12px;
+
+//Margins
+$default-margin: 24px;
+$small-margin: 12px;

@@ -52,7 +52,7 @@ export default defineComponent({
   height: 60%;
 
   & .button__container {
-    margin: 12px 0;
+    margin: $small-margin 0;
   }
 }
 </style>

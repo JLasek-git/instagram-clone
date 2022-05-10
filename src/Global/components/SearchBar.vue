@@ -67,7 +67,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 270px;
+  width: $desktop-small-container-width;
   height: 35px;
   border-radius: $medium-border-radius;
   background-color: $accents-color;
