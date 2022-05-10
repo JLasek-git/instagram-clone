@@ -81,7 +81,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .photo__container {
   height: fit-content;
-  width: calc(615px);
+  width: 615px;
   border-radius: $small-border-radius;
   margin-top: 25px;
 
@@ -158,6 +158,14 @@ export default defineComponent({
         cursor: pointer;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .photo__container {
+    height: fit-content;
+    border-radius: 0;
+    border: none;
   }
 }
 </style>

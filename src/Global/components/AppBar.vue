@@ -60,6 +60,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     height: 100%;
+    margin: 0 20px;
 
     & .logo__container {
       display: flex;
@@ -102,6 +103,12 @@ export default defineComponent({
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .search-bar__container {
+    display: none !important;
   }
 }
 </style>

@@ -57,4 +57,14 @@ export default defineComponent({
     height: 100%;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .homepage__container {
+    display: flex;
+    justify-content: center;
+    .right-side__container {
+      display: none;
+    }
+  }
+}
 </style>
