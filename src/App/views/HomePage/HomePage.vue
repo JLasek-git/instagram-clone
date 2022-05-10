@@ -2,7 +2,11 @@
   <div class="homepage__container">
     <div class="left-side__container">
       <FollowedShorts />
-      <SinglePhoto v-for="n in 10" :key="n" />
+      <SinglePhoto
+        v-for="homepagePhoto in homepagePhotosArray"
+        :key="homepagePhoto.id"
+        :homepagePhotoData="homepagePhoto"
+      />
     </div>
     <div class="right-side__container">
       <HomePageUtils />
@@ -11,10 +15,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import FollowedShorts from "@/App/views/HomePage/components/FollowedShorts.vue";
 import SinglePhoto from "@/App/views/HomePage/components/SinglePhoto.vue";
 import HomePageUtils from "@/App/views/HomePage/components/HomePageUtils.vue";
+import { getHomepagePhotos } from "@/App/services/homepage.service";
+import { PhotoModel } from "@/Global/models/PhotoModel";
 
 export default defineComponent({
   components: {
@@ -23,7 +29,15 @@ export default defineComponent({
     SinglePhoto,
   },
   setup() {
-    return;
+    const homepagePhotosArray = ref<PhotoModel[]>([]);
+
+    getHomepagePhotos().then((response) => {
+      homepagePhotosArray.value = response;
+    });
+
+    return {
+      homepagePhotosArray,
+    };
   },
 });
 </script>

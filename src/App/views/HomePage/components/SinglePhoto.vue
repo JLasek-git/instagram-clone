@@ -3,24 +3,31 @@
     <div class="photo-header">
       <div class="user-info">
         <div class="user-avatar"></div>
-        <div class="user-name">_music_theory</div>
+        <div class="user-name">{{ homepagePhotoData.username }}</div>
       </div>
       <div class="utils">
         <img src="../../../../Global/assets/dots.svg" />
       </div>
     </div>
-    <div class="photo__container"></div>
+    <div class="photo__container">
+      <img :src="require(`@/App/assets/${homepagePhotoData.photoName}`)" />
+    </div>
     <div class="comments-section">
       <div class="comments-section-icons">
         <div class="reaction-icons">
           <img
             class="photo-icon"
-            src="../../../../Global/assets/heart-outline.svg"
+            :src="
+              likedPhotos.includes(homepagePhotoData.id)
+                ? require('@/Global/assets/heart.svg')
+                : require('@/Global/assets/heart-outline.svg')
+            "
+            @click="handleHeartIconClick(homepagePhotoData.id)"
           />
           <img class="photo-icon" src="../../../../Global/assets/chat.svg" />
           <img
             class="photo-icon"
-            src="../../../../Global/assets/paperplane.svg"
+            src="../../../../Global/assets/paperplaneoutilned.svg"
           />
         </div>
         <div class="save-icon">
@@ -32,11 +39,39 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { PhotoModel } from "@/Global/models/PhotoModel";
+import { defineComponent, PropType, watch, ref, computed } from "vue";
+import { useStore } from "vuex";
 
 export default defineComponent({
-  setup() {
-    return;
+  props: {
+    homepagePhotoData: {
+      type: Object as PropType<PhotoModel>,
+      required: true,
+    },
+  },
+  setup(props) {
+    const store = useStore();
+    const likedPhotos = computed<string[]>(
+      () => store.getters["getLikedPhotos"]
+    );
+
+    function handleHeartIconClick(photoId: string): void {
+      if (!likedPhotos.value.includes(photoId)) {
+        store.commit("addLikedPhoto", photoId);
+      } else {
+        store.commit("removeLikedPhoto", photoId);
+      }
+    }
+
+    watch(likedPhotos.value, () => {
+      likedPhotos.value.includes(props.homepagePhotoData.id);
+    });
+
+    return {
+      handleHeartIconClick,
+      likedPhotos,
+    };
   },
 });
 </script>
@@ -44,9 +79,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .photo__container {
   height: fit-content;
-  width: calc(615px - 20px);
+  width: calc(615px);
   border-radius: $small-border-radius;
-  padding: 0 10px;
   margin-top: 25px;
 
   & .photo-header {
@@ -56,6 +90,7 @@ export default defineComponent({
     align-items: center;
 
     & .user-info {
+      padding: 0 10px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -89,6 +124,12 @@ export default defineComponent({
   & .photo__container {
     height: 615px;
     width: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   & .comments-section {
@@ -104,6 +145,7 @@ export default defineComponent({
 
       & .reaction-icons,
       & .save-icon {
+        padding-right: 10px;
         & .photo-icon {
           width: 26px;
           height: 26px;
@@ -114,6 +156,9 @@ export default defineComponent({
         & .photo-icon {
           padding: 8px;
         }
+      }
+      & img {
+        cursor: pointer;
       }
     }
   }
