@@ -50,7 +50,7 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  setup() {
     const store = useStore();
     const likedPhotos = computed<string[]>(
       () => store.getters["getLikedPhotos"]
@@ -63,10 +63,6 @@ export default defineComponent({
         store.commit("removeLikedPhoto", photoId);
       }
     }
-
-    watch(likedPhotos.value, () => {
-      likedPhotos.value.includes(props.homepagePhotoData.id);
-    });
 
     return {
       handleHeartIconClick,
